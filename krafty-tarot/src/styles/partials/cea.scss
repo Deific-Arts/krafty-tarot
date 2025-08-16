@@ -1,0 +1,28 @@
+@use 'node_modules/include-media/dist/_include-media.scss' as *;
+@use './helpers.scss' as *;
+
+business-home {
+  aside {
+    margin-top: 0.5rem;
+    line-height: 1.2;
+    padding: 0 1rem;
+  }
+}
+
+business-booking {
+  business-calendly {
+    display: block;
+    width: calc(100% + 4rem);
+    margin: 1.5rem -2rem 0 -2rem;
+  }
+}
+
+business-social {
+  .avatar {
+    max-width: 50vw;
+    margin: 1rem auto;
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
+  }
+}
+

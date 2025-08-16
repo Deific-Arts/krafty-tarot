@@ -1,0 +1,126 @@
+@use 'node_modules/include-media/dist/_include-media.scss' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primitive-color-primary: 130 71 142;
+  --primitive-color-secondary: 241 244 125;
+  --primitive-color-tertiary: 228, 189, 228;
+  --primitive-color-quaternary: 255, 100, 255;
+  --primitive-color-border: 68 44 63;
+
+  --color-white: rgb(var(--kemet-color-white));
+  --color-gray-300: rgb(var(--kemet-color-gray-300));
+  --color-gray-800: rgb(var(--kemet-color-gray-800));
+  --color-border: rgb(var(--primitive-color-border));
+  --color-success: rgb(var(--kemet-color-success));
+  --color-danger: rgb(var(--kemet-color-error));
+  --color-link: rgb(var(--primitive-color-primary));
+  --color-primary: rgb(var(--primitive-color-primary));
+  --color-secondary: rgb(var(--primitive-color-secondary));
+  --color-tertiary: rgb(var(--primitive-color-tertiary));
+  --color-quaternary: rgb(var(--primitive-color-quaternary));
+  --color-border: rgb(var(--primitive-color-border));
+
+  --kemet-color-primary: var(--primitive-color-primary);
+  --kemet-color-foreground: var(--primitive-color-primary);
+  --kemet-color-background: var(--kemet-color-white);
+}
+
+html {
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: "Spectral", serif;
+  font-size: 1.25rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primitive-color-tertiary);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(var(--kemet-color-gray-200));
+}
+
+table {
+  color: inherit;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+textarea {
+  min-height: 10em;
+}
+
+main {
+  & > section {
+    padding: 1rem;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    text-align: center;
+    position: relative;
+  }
+
+  & > section:has(business-booking) {
+    color: var(--color-primary);
+    background-color: var(--color-white);
+  }
+
+  & > section:nth-child(odd):not(:has(business-booking)) {
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+  }
+
+  & > section:nth-child(even):not(:has(business-booking)) {
+    color: var(--color-white);
+    background-color: var(--color-quaternary);
+  }
+
+  & > section > * {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+img.circle {
+  border-radius: 50%;
+}
+

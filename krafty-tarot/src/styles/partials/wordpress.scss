@@ -1,0 +1,18 @@
+@use 'node_modules/include-media/dist/_include-media.scss' as *;
+@use './helpers.scss';
+
+.alignfull {
+  @extend %align-full;
+}
+
+.alignwide {
+  @extend %align-wide;
+}
+
+input[type=submit] {
+  @extend %button;
+}
+
+form[name=loginform] {
+  margin: 1rem;
+}
