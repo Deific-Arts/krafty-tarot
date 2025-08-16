@@ -17,7 +17,7 @@ jobs:
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_DEPLOY_HOST }}
+          server: ${{ secrets.FTP_DEPLOY_HOST_DEV }}
           username: ${{ secrets.FTP_DEPLOY_USERNAME_DEV }}
           password: ${{ secrets.FTP_DEPLOY_PASSWORD_DEV }}
           port: ${{ secrets.FTP_DEPLOY_PORT_DEV }}
