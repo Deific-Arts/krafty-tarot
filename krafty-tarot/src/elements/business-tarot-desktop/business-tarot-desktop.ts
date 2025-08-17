@@ -19,7 +19,24 @@ class BusinessTarotDesktop extends LitElement {
   }
 
   render() {
-    return html`<div>${this.current}</div>`;
+    return html`
+      <div>
+        <tarot-card>
+          <span class="corner top left" part="corner"><business-svg icon="corner"></business-svg></span>
+          <span class="corner top right" part="corner"><business-svg icon="corner"></business-svg></span>
+          <span class="corner bottom left" part="corner"><business-svg icon="corner"></business-svg></span>
+          <span class="corner bottom right" part="corner"><business-svg icon="corner"></business-svg></span>
+          ${this.current}
+        </tarot-card>
+        <nav>
+          <button @click=${(event) => this.deepLink(event, 'home')}>Home</button>
+          <button @click=${(event) => this.deepLink(event, 'bio')}>Bio</button>
+          <button @click=${(event) => this.deepLink(event, 'booking')}>Booking</button>
+          <button @click=${(event) => this.deepLink(event, 'contact')}>Contact</button>
+          <button @click=${(event) => this.deepLink(event, 'social')}>Social</button>
+        </nav>
+      </div>
+    `;
   }
 
   inViewElements() {
@@ -58,6 +75,18 @@ class BusinessTarotDesktop extends LitElement {
         this.current = 'social';
       }
     }, { threshold: 1 });
+  }
+
+  deepLink(event, link: string) {
+    event.preventDefault();
+    const { search } = window.location;
+
+    if (link) {
+      const newUrl = `${link}/${search}`;
+      window.history.replaceState(null, '', newUrl);
+      const target = document.querySelector(`business-${link}`);
+      target && target.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
 
