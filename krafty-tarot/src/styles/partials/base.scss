@@ -7,13 +7,16 @@
 }
 
 :root {
+  --primitive-color-white-rich: 248 248 248;
   --primitive-color-primary: 130 71 142;
   --primitive-color-secondary: 241 244 125;
   --primitive-color-tertiary: 228, 189, 228;
   --primitive-color-quaternary: 255, 100, 255;
   --primitive-color-border: 68 44 63;
+  --primitive-background: 178 127 166;
 
   --color-white: rgb(var(--kemet-color-white));
+  --color-white-rich: rgb(var(--primitive-color-white-rich));
   --color-gray-300: rgb(var(--kemet-color-gray-300));
   --color-gray-800: rgb(var(--kemet-color-gray-800));
   --color-border: rgb(var(--primitive-color-border));
@@ -25,6 +28,7 @@
   --color-tertiary: rgb(var(--primitive-color-tertiary));
   --color-quaternary: rgb(var(--primitive-color-quaternary));
   --color-border: rgb(var(--primitive-color-border));
+  --color-background: rgb(var(--primitive-background));
 
   --kemet-color-primary: var(--primitive-color-primary);
   --kemet-color-foreground: var(--primitive-color-primary);
@@ -42,6 +46,7 @@ body {
   font-size: 1.25rem;
   margin: 0;
   line-height: 1.5;
+  background-color: var(--color-background);
 }
 
 a {
@@ -112,11 +117,28 @@ main {
   }
 
   & > section > * {
+    width: 100%;
     height: 100%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 1024px) {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    overflow: auto;
   }
 }
 

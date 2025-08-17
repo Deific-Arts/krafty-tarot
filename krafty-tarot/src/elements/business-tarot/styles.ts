@@ -79,7 +79,7 @@ export default css`
     font-weight: 500;
     border-top: 2px solid var(--color-white);
     padding-top: 0.5rem;
-    width: 60vw;
+    width: 60%;
     margin: auto;
   }
 

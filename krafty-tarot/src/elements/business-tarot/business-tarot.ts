@@ -15,13 +15,13 @@ class BusinessTarot extends LitElement {
 
   render() {
     return html`
-      <span class="corner top left"><business-svg icon="corner"></business-svg></span>
-      <span class="corner top right"><business-svg icon="corner"></business-svg></span>
-      <span class="corner bottom left"><business-svg icon="corner"></business-svg></span>
-      <span class="corner bottom right"><business-svg icon="corner"></business-svg></span>
-      <div class="content">
+      <span class="corner top left" part="corner"><business-svg icon="corner"></business-svg></span>
+      <span class="corner top right" part="corner"><business-svg icon="corner"></business-svg></span>
+      <span class="corner bottom left" part="corner"><business-svg icon="corner"></business-svg></span>
+      <span class="corner bottom right" part="corner"><business-svg icon="corner"></business-svg></span>
+      <div class="content" part="content">
         <div><slot></slot></div>
-        <p class="title">${this.title}</p>
+        <p class="title" part="title">${this.title}</p>
       </div>
     `;
   }
