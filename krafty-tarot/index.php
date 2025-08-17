@@ -78,4 +78,5 @@
     </business-social>
 	</section>
 </main>
+<business-tarot-desktop></business-tarot-desktop>
 <?php get_footer(); ?>
