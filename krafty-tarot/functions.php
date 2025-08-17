@@ -82,8 +82,8 @@ if (!class_exists('\business\Theme')) {
 
     public static function add_assets() {
       // enqueue font end bundles
-      wp_enqueue_style('bundle-css', get_theme_file_uri('/build/frontend.css'));
-      wp_enqueue_script('bundle-js', get_theme_file_uri('/build/frontend.js'), array(), false, true);
+      wp_enqueue_style('bundle-css', get_theme_file_uri('/build/frontend.css'), array(), null);
+      wp_enqueue_script('bundle-js', get_theme_file_uri('/build/frontend.js'), array(), null, true);
       wp_enqueue_style('parent-css', get_template_directory_uri() . '/style.css');
     }
 
