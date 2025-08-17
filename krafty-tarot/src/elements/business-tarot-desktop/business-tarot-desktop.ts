@@ -26,17 +26,30 @@ class BusinessTarotDesktop extends LitElement {
           <span class="corner top right" part="corner"><business-svg icon="corner"></business-svg></span>
           <span class="corner bottom left" part="corner"><business-svg icon="corner"></business-svg></span>
           <span class="corner bottom right" part="corner"><business-svg icon="corner"></business-svg></span>
-          ${this.current}
+          <business-svg icon="${this.current}"></business-svg>
+          <span class="title" part="title">${this.getTitle(this.current)}</span>
         </tarot-card>
         <nav>
-          <button @click=${(event) => this.deepLink(event, 'home')}>Home</button>
-          <button @click=${(event) => this.deepLink(event, 'bio')}>Bio</button>
-          <button @click=${(event) => this.deepLink(event, 'booking')}>Booking</button>
-          <button @click=${(event) => this.deepLink(event, 'contact')}>Contact</button>
-          <button @click=${(event) => this.deepLink(event, 'social')}>Social</button>
+          <button @click=${(event) => this.deepLink(event, 'bio')}><business-svg icon="bio"></business-svg>&nbsp;Bio</button>
+          <button @click=${(event) => this.deepLink(event, 'event')}><business-svg icon="event"></business-svg>&nbsp;Events</button>
+          <button @click=${(event) => this.deepLink(event, 'booking')}><business-svg icon="booking"></business-svg>&nbsp;Booking</button>
+          <button @click=${(event) => this.deepLink(event, 'contact')}><business-svg icon="contact"></business-svg>&nbsp;Contact</button>
+          <button @click=${(event) => this.deepLink(event, 'social')}><business-svg icon="social"></business-svg>&nbsp;Social</button>
         </nav>
       </div>
     `;
+  }
+
+  getTitle(current: string) {
+    switch(current) {
+      case "home" : return "The Love";
+      case "bio" : return "The Reader";
+      case "event" : return "The Place";
+      case "booking" : return "The Calendar";
+      case "contact" : return "The Message";
+      case "social" : return "The Community";
+      default: return "The Love";
+    }
   }
 
   inViewElements() {

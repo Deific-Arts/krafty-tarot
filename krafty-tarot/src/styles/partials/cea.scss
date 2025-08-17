@@ -11,6 +11,12 @@ business-home {
   business-svg {
     max-width: 75vw;
   }
+
+  @media (min-width: 1024px) {
+    business-svg {
+      max-width: 400px;
+    }
+  }
 }
 
 business-booking {

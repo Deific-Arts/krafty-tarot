@@ -13,17 +13,33 @@ export default css`
       top: 0;
       right: 0;
       height: 100vh;
+      opacity: 0;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    :host([current="bio"]),
+    :host([current="booking"]),
+    :host([current="contact"]),
+    :host([current="social"]) {
+      opacity: 1;
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      max-width: 60%;
+      justify-content: center;
+      margin: auto;
     }
 
     button {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
       background: none;
       border: none;
       color: var(--color-border);
@@ -33,6 +49,7 @@ export default css`
       text-transform: uppercase;
       font-family: 'Spectral', serif;
       font-weight: 500;
+      letter-spacing: 0;
     }
 
     button:hover {
@@ -42,7 +59,7 @@ export default css`
     div {
       display: none;
       position: relative;
-      right: 28.5vw;
+      right: calc(calc(100vw - 600px) / 2);
       gap: 2rem;
       flex-direction: column;
     }
@@ -63,7 +80,10 @@ export default css`
       position: relative;
       color: var(--color-background);
       display: flex;
-      width: 400px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 450px;
       height: 700px;
       margin: auto;
       border-radius: 1rem;
@@ -80,6 +100,30 @@ export default css`
       height: 90%;
       border-radius: 1rem;
       border: 2px solid var(--color-background);
+    }
+
+    tarot-card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 55%;
+      height: 50%;
+      border-radius: 1rem;
+      border-left: 2px solid var(--color-background);
+      border-right: 2px solid var(--color-background);
+      border-bottom: 2px solid var(--color-background);
+    }
+
+    nav business-svg {
+      width: 1em;
+      height: 1em;
+    }
+
+    tarot-card business-svg {
+      width: 100px;
+      height: 100px;
     }
 
     .corner {
@@ -114,6 +158,17 @@ export default css`
 
     .bottom.right {
       transform: scaleX(-1) scaleY(-1);
+    }
+
+    .title {
+      position: absolute;
+      color: var(--color-background);
+      width: 60%;
+      bottom: 5rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-top: 2px solid;
+      padding-top: 1rem;
     }
   }
 `

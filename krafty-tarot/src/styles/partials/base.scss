@@ -51,14 +51,14 @@ body {
 }
 
 a {
-  color: var(--primitive-color-tertiary);
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
+  color: var(--color-border);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
 
   &:hover {
-    border-bottom: 1px solid;
+    color: var(--color-secondary);
   }
 }
 

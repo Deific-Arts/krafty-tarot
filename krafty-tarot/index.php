@@ -42,17 +42,19 @@
     </business-booking>
 	</section>
 	<section>
-    <business-tarot title="The Place" dark>
-      <?php
-        $thePlacePage = get_page_by_path('the-place');
-        if ($thePlacePage) {
-          $content = apply_filters('the_content', $thePlacePage->post_content);
-          echo $content;
-        } else {
-          echo 'There was an error grabbing the place.';
-        }
-      ?>
-    </business-tarot>
+    <business-event>
+      <business-tarot title="The Place" dark>
+        <?php
+          $thePlacePage = get_page_by_path('the-place');
+          if ($thePlacePage) {
+            $content = apply_filters('the_content', $thePlacePage->post_content);
+            echo $content;
+          } else {
+            echo 'There was an error grabbing the place.';
+          }
+        ?>
+      </business-tarot>
+    </business-event>
 	</section>
 	<section>
     <business-contact>
