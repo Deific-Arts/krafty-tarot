@@ -3,15 +3,31 @@
 	<section>
     <business-home>
       <business-svg icon="logo"></business-svg>
-      <aside>Unlock your path. Insight, guidance, and clarity, one card at a time.</aside>
+      <aside>
+        <?php
+          $homePage = get_page_by_path('home');
+          if ($homePage) {
+            $content = apply_filters('the_content', $homePage->post_content);
+            echo $content;
+          } else {
+            echo 'There was an error grabbing the home page.';
+          }
+        ?>
+      </aside>
     </business-home>
 	</section>
 	<section>
 		<business-bio>
       <business-tarot title="The Reader" dark>
-        <p>I believe every card tells a story, and every story holds the power to illuminate your path. Led by passion and intuition, Krafty Tarot offers personalized readings that blend deep insight with practical guidance. Whether you’re seeking clarity in love, career, or life’s bigger questions, I provide a safe and supportive space to explore possibilities and uncover hidden truths.
-        <p>With a craft honed through years of study and experience, our approach combines intuition, symbolism, and creativity to empower you to make informed decisions and embrace your journey with confidence. At Krafty Tarot, the cards are more than just a tool—they’re a bridge to self-discovery, transformation, and personal growth.</p>
-        <p>Discover the magic within your own story—one card at a time.</p>
+        <?php
+          $theReaderPage = get_page_by_path('the-reader');
+          if ($theReaderPage) {
+            $content = apply_filters('the_content', $theReaderPage->post_content);
+            echo $content;
+          } else {
+            echo 'There was an error grabbing the reader.';
+          }
+        ?>
       </business-tarot>
     </business-bio>
 	</section>
@@ -27,8 +43,15 @@
 	</section>
 	<section>
     <business-tarot title="The Place" dark>
-      <h2>Events</h2>
-      <p>Check back for upcoming events.</p>
+      <?php
+        $thePlacePage = get_page_by_path('the-place');
+        if ($thePlacePage) {
+          $content = apply_filters('the_content', $thePlacePage->post_content);
+          echo $content;
+        } else {
+          echo 'There was an error grabbing the place.';
+        }
+      ?>
     </business-tarot>
 	</section>
 	<section>
@@ -42,8 +65,15 @@
   <section>
     <business-social>
       <business-tarot title="The Community" dark>
-        <img src="http://localhost:3340/wp-content/uploads/2025/08/avatar.jpg" class="avatar circle" alt="Krafty Tarot">
-        <h2>Discover the magic I share online</h2>
+        <?php
+          $theCommunityPage = get_page_by_path('the-community');
+          if ($theCommunityPage) {
+            $content = apply_filters('the_content', $theCommunityPage->post_content);
+            echo $content;
+          } else {
+            echo 'There was an error grabbing the community.';
+          }
+        ?>
       </business-tarot>
     </business-social>
 	</section>
