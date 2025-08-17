@@ -16,6 +16,7 @@ class BusinessTarotDesktop extends LitElement {
 
   firstUpdated() {
     this.inViewElements();
+    this.scrollToCurrent();
   }
 
   render() {
@@ -55,6 +56,7 @@ class BusinessTarotDesktop extends LitElement {
   inViewElements() {
     const businessHome = document.querySelector('business-home') as HTMLElement;
     const businessBio = document.querySelector('business-bio') as HTMLElement;
+    const businessEvent = document.querySelector('business-event') as HTMLElement;
     const businessBooking = document.querySelector('business-booking') as HTMLElement;
     const businessContact = document.querySelector('business-contact') as HTMLElement;
     const businessSocial = document.querySelector('business-social') as HTMLElement;
@@ -68,29 +70,40 @@ class BusinessTarotDesktop extends LitElement {
     businessBio && isElementInView(businessBio, (inView) => {
       if (inView) {
         this.current = 'bio';
+        window.history.replaceState(null, '', '/bio');
+      }
+    }, { threshold: 1 });
+
+    businessEvent && isElementInView(businessEvent, (inView) => {
+      if (inView) {
+        this.current = 'event';
+        window.history.replaceState(null, '', '/event');
       }
     }, { threshold: 1 });
 
     businessBooking && isElementInView(businessBooking, (inView) => {
       if (inView) {
         this.current = 'booking';
+        window.history.replaceState(null, '', '/booking');
       }
     }, { threshold: 1 });
 
     businessContact && isElementInView(businessContact, (inView) => {
       if (inView) {
         this.current = 'contact';
+        window.history.replaceState(null, '', '/contact');
       }
     }, { threshold: 1 });
 
     businessSocial && isElementInView(businessSocial, (inView) => {
       if (inView) {
         this.current = 'social';
+        window.history.replaceState(null, '', '/social');
       }
     }, { threshold: 1 });
   }
 
-  deepLink(event, link: string) {
+  deepLink(event: Event, link: string) {
     event.preventDefault();
     const { search } = window.location;
 
@@ -100,6 +113,13 @@ class BusinessTarotDesktop extends LitElement {
       const target = document.querySelector(`business-${link}`);
       target && target.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  scrollToCurrent() {
+    const { pathname } = window.location;
+    this.current = pathname.replace(/\//g, '');
+    const target = document.querySelector(`business-${this.current}`);
+    target && target.scrollIntoView({ behavior: 'smooth' });
   }
 }
 

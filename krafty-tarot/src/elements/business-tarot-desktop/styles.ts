@@ -21,6 +21,7 @@ export default css`
     }
 
     :host([current="bio"]),
+    :host([current="event"]),
     :host([current="booking"]),
     :host([current="contact"]),
     :host([current="social"]) {
