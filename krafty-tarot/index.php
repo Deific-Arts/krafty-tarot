@@ -36,7 +36,7 @@
       <business-tarot title="The Calendar" light>
         <div>
           <p>Book a reading with me today and let's explore the magic.</p>
-          <business-calendly url="https://calendly.com/contact-deificarts/booking-demo" mode="save" height="50vh"></business-calendly>
+          <business-calendly url="https://calendly.com/carrie-kraftytarot/meet-and-greet" mode="save" height="50vh"></business-calendly>
         </div>
       </business-tarot>
     </business-booking>
