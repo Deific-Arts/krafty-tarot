@@ -12,6 +12,7 @@ import 'kemet-ui/dist/components/kemet-textarea/kemet-textarea';
 import './elements/business-calendly/business-calendly';
 import './elements/business-svg/business-svg';
 import './elements/business-tarot/business-tarot';
+import './elements/business-tarot-desktop/business-tarot-desktop';
 import './elements/business-contact-form/business-contact-form';
 import './elements/business-loader/business-loader';
 

@@ -40,7 +40,6 @@ class BusinessContactForm extends LitElement {
     this.form = this.shadowRoot?.querySelector('form') || null;
     this.fields = this.shadowRoot?.querySelectorAll('kemet-field') || null;
     this.loader = this.shadowRoot?.querySelector('business-loader') || null;
-    console.log(this.loader);
   }
 
   render() {

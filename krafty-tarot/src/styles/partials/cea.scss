@@ -3,9 +3,19 @@
 
 business-home {
   aside {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     line-height: 1.2;
     padding: 0 1rem;
+  }
+
+  business-svg {
+    max-width: 75vw;
+  }
+
+  @media (min-width: 1024px) {
+    business-svg {
+      max-width: 400px;
+    }
   }
 }
 
@@ -18,11 +28,26 @@ business-booking {
 }
 
 business-social {
-  .avatar {
-    max-width: 50vw;
+  img[src*="wp-content/uploads"] {
+    max-width: 50%;
     margin: 1rem auto;
     outline: 2px solid var(--color-white);
     outline-offset: 4px;
+    border-radius: 50%;
   }
 }
+
+business-tarot {
+ max-width: 600px;
+
+ @media (min-width: 1024px) {
+   border: none;
+
+   &::part(corner),
+   &::part(title) {
+    display: none;
+   }
+ }
+}
+
 
