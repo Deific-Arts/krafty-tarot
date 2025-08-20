@@ -67,7 +67,6 @@ class BusinessContactForm extends LitElement {
 
   sendMessage(event: any) {
     event.preventDefault();
-    this.loader.loading = true;
 
     setTimeout(async () => {
       const hasError = Array.from(this.fields).some(field => field.status === 'error');
@@ -75,6 +74,7 @@ class BusinessContactForm extends LitElement {
       if (hasError) {
         this.formMessage = "Please fix the errors on the form!"
       } else {
+        this.loader.loading = true;
         const form = new FormData(this.form);
 
         const bodyData = {

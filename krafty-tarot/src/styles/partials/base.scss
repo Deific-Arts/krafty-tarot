@@ -15,6 +15,11 @@
   --primitive-color-border: 68 44 63;
   --primitive-background: 178 127 166;
 
+  --kemet-color-primary: var(--primitive-color-primary);
+  --kemet-color-foreground: var(--primitive-color-primary);
+  --kemet-color-background: var(--kemet-color-white);
+  --kemet-color-error: var(--kemet-color-red-700);
+
   --color-white: rgb(var(--kemet-color-white));
   --color-white-rich: rgb(var(--primitive-color-white-rich));
   --color-gray-300: rgb(var(--kemet-color-gray-300));
@@ -30,9 +35,7 @@
   --color-border: rgb(var(--primitive-color-border));
   --color-background: rgb(var(--primitive-background));
 
-  --kemet-color-primary: var(--primitive-color-primary);
-  --kemet-color-foreground: var(--primitive-color-primary);
-  --kemet-color-background: var(--kemet-color-white);
+
 }
 
 html {

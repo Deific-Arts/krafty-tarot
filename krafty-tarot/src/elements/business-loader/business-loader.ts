@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import styles from './styles';
 
 @customElement('business-loader')
@@ -13,7 +13,12 @@ class BusinessLoader extends LitElement {
   loading: boolean = false;
 
   render() {
-    return html`<div class="loader"></div>`;
+    return html`
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="inner-circle"></div>
+      </div>
+    `;
   }
 }
 

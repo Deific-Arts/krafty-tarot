@@ -64,41 +64,48 @@ class BusinessTarotDesktop extends LitElement {
     businessHome && isElementInView(businessHome, (inView) => {
       if (inView) {
         this.current = 'home';
+        this.style.opacity = "0";
+        window.history.replaceState(null, '', '/');
       }
     }, { threshold: 1 });
 
     businessBio && isElementInView(businessBio, (inView) => {
       if (inView) {
         this.current = 'bio';
-        window.history.replaceState(null, '', '/bio');
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/bio/');
       }
     }, { threshold: 1 });
 
     businessEvent && isElementInView(businessEvent, (inView) => {
       if (inView) {
         this.current = 'event';
-        window.history.replaceState(null, '', '/event');
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/event/');
       }
     }, { threshold: 1 });
 
     businessBooking && isElementInView(businessBooking, (inView) => {
       if (inView) {
         this.current = 'booking';
-        window.history.replaceState(null, '', '/booking');
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/booking/');
       }
     }, { threshold: 1 });
 
     businessContact && isElementInView(businessContact, (inView) => {
       if (inView) {
         this.current = 'contact';
-        window.history.replaceState(null, '', '/contact');
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/contact/');
       }
     }, { threshold: 1 });
 
     businessSocial && isElementInView(businessSocial, (inView) => {
       if (inView) {
         this.current = 'social';
-        window.history.replaceState(null, '', '/social');
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/social/');
       }
     }, { threshold: 1 });
   }
