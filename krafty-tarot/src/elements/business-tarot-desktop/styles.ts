@@ -20,14 +20,6 @@ export default css`
       transition: opacity 0.3s ease-in-out;
     }
 
-    :host([current="bio"]),
-    :host([current="event"]),
-    :host([current="booking"]),
-    :host([current="contact"]),
-    :host([current="social"]) {
-      opacity: 1;
-    }
-
     nav {
       display: flex;
       gap: 0.5rem;
