@@ -2,8 +2,14 @@ import { css } from 'lit';
 
 export default css`
   :host {
+    --loader-size: 40px;
+    --loader-border: 2px;
+    --color: var(--color-secondary);
+    --background: var(--color-tertiary);
+
     display: inline-block;
     visibility: hidden;
+    position: relative;
   }
 
   :host([loading]) {
@@ -11,18 +17,43 @@ export default css`
   }
 
   .loader {
-    width: 40px;
-    --b: 8px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--color-primary);
-    -webkit-mask:
-      repeating-conic-gradient(#0000 0deg,#000 1deg 70deg,#0000 71deg 90deg),
-      radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
-    -webkit-mask-composite: destination-in;
-            mask-composite: intersect;
-    animation: l5 1s infinite;
+    display: inline-block;
+    position: relative;
+    top: calc(var(--loader-size) / 2);
+
+    width: var(--loader-size);
+    height: var(--loader-size);
+    opacity: 0.9;
+    animation: rotate 1.2s linear infinite;
   }
 
-  @keyframes l5 {to{transform: rotate(.5turn)}}
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--loader-size);
+    height: var(--loader-size);
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--background) 45%, var(--color));
+  }
+
+  .inner-circle {
+    position: absolute;
+    top: 0;
+    left: var(--loader-border);
+    width: calc(var(--loader-size) - calc(2 * var(--loader-border)));
+    height: calc(var(--loader-size) - calc(2 * var(--loader-border)));
+    border-radius: 50%;
+    background: var(--background);
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
 `
