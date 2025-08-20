@@ -60,7 +60,7 @@
     <business-contact>
       <business-tarot title="The Message" light>
         <p>Feel free to send your questions into the universe—I am here to help you uncover the answers the cards hold for you.</p>
-        <business-contact-form url="<?php echo rest_url("business/v1/forms/contact"); ?>" to="contact@deificarts.com" subject="Contact Form" from-name="Krafty Tarot" from-email="contact@deificarts.com"></business-contact-form>
+        <business-contact-form url="<?php echo rest_url("business/v1/forms/contact"); ?>" to="carrie@kraftytarot.com" subject="Someone wants to reach out to Krafty Tarot" from-name="Krafty Tarot" from-email="carrie@kraftytarot.com"></business-contact-form>
       </business-tarot>
     </business-contact>
 	</section>
