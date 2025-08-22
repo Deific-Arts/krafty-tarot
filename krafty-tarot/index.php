@@ -80,7 +80,7 @@
             }
             echo '<kemet-rotator effect="flip" rotation-speed="8" messages=\''. json_encode($testimonialsArray) .'\'></kemet-rotator>';
           } else {
-            echo '<p>There was an error grabbing the testimonials.</p>';
+            echo '<p>Check back later for testimonials.</p>';
           }
         ?>
       </business-tarot>
