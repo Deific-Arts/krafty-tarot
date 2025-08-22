@@ -35,6 +35,7 @@ class BusinessTarotDesktop extends LitElement {
           <button @click=${(event) => this.deepLink(event, 'event')}><business-svg icon="event"></business-svg>&nbsp;Events</button>
           <button @click=${(event) => this.deepLink(event, 'booking')}><business-svg icon="booking"></business-svg>&nbsp;Booking</button>
           <button @click=${(event) => this.deepLink(event, 'contact')}><business-svg icon="contact"></business-svg>&nbsp;Contact</button>
+          <button @click=${(event) => this.deepLink(event, 'testimony')}><business-svg icon="testimony"></business-svg>&nbsp;Testimonials</button>
           <button @click=${(event) => this.deepLink(event, 'social')}><business-svg icon="social"></business-svg>&nbsp;Social</button>
         </nav>
       </div>
@@ -48,8 +49,9 @@ class BusinessTarotDesktop extends LitElement {
       case "event" : return "The Place";
       case "booking" : return "The Calendar";
       case "contact" : return "The Message";
+      case "testimony" : return "The Love";
       case "social" : return "The Community";
-      default: return "The Love";
+      default: return "The Host";
     }
   }
 
@@ -59,6 +61,7 @@ class BusinessTarotDesktop extends LitElement {
     const businessEvent = document.querySelector('business-event') as HTMLElement;
     const businessBooking = document.querySelector('business-booking') as HTMLElement;
     const businessContact = document.querySelector('business-contact') as HTMLElement;
+    const businessTestimony = document.querySelector('business-testimony') as HTMLElement;
     const businessSocial = document.querySelector('business-social') as HTMLElement;
 
     businessHome && isElementInView(businessHome, (inView) => {
@@ -98,6 +101,14 @@ class BusinessTarotDesktop extends LitElement {
         this.current = 'contact';
         this.style.opacity = "1";
         window.history.replaceState(null, '', '/contact/');
+      }
+    }, { threshold: 1 });
+
+    businessTestimony && isElementInView(businessTestimony, (inView) => {
+      if (inView) {
+        this.current = 'testimony';
+        this.style.opacity = "1";
+        window.history.replaceState(null, '', '/testimony/');
       }
     }, { threshold: 1 });
 

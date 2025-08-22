@@ -7,6 +7,7 @@ import 'kemet-ui/dist/components/kemet-field/kemet-field';
 import 'kemet-ui/dist/components/kemet-icon/kemet-icon';
 import 'kemet-ui/dist/components/kemet-input/kemet-input';
 import 'kemet-ui/dist/components/kemet-textarea/kemet-textarea';
+import 'kemet-ui/dist/components/kemet-rotator/kemet-rotator';
 
 // components
 import './elements/business-calendly/business-calendly';
