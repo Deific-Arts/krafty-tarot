@@ -65,8 +65,30 @@
     </business-contact>
 	</section>
   <section>
+    <business-testimony>
+      <business-tarot title="The Love" dark>
+        <?php
+          $testimonials = get_posts(array(
+            'post_type' => 'testimonial',
+            'posts_per_page' => -1,
+          ));
+
+          if ($testimonials) {
+            $testimonialsArray = [];
+            foreach ($testimonials as $testimonial) {
+              $testimonialsArray[] = str_replace("\n", "", strip_tags(apply_filters('the_content', '&ldquo;'. $testimonial->post_content .'&rdquo;')) . '<br /><br ><cite>&mdash; '. $testimonial->post_title .'</cite>');
+            }
+            echo '<kemet-rotator effect="flip" rotation-speed="8" messages=\''. json_encode($testimonialsArray) .'\'></kemet-rotator>';
+          } else {
+            echo '<p>Check back later for testimonials.</p>';
+          }
+        ?>
+      </business-tarot>
+    </business-testimony>
+	</section>
+  <section>
     <business-social>
-      <business-tarot title="The Community" dark>
+      <business-tarot title="The Community" light>
         <?php
           $theCommunityPage = get_page_by_path('the-community');
           if ($theCommunityPage) {

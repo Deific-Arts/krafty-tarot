@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import styles from './styles';
-import { logo, corner, booking, bio, contact, social, event } from './svgs';
+import { logo, corner, booking, bio, contact, social, event, testimony } from './svgs';
 
 @customElement('business-svg')
 class BusinessSVG extends LitElement {
@@ -23,6 +23,7 @@ class BusinessSVG extends LitElement {
       case "booking" : return booking;
       case "event" : return event;
       case "contact" : return contact;
+      case "testimony" : return testimony;
       case "social" : return social;
       default: return logo;
     }
