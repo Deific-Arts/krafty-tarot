@@ -1,14 +1,4 @@
 import React from 'react';
-// import { createComponent } from '@lit/react';
-// import BusinessCalendlyClass from '../../src/elements/business-calendly/business-calendly';
-
-// export const BusinessCalendly = createComponent({
-//   tagName: 'business-calendly',
-//   elementClass: BusinessCalendlyClass,
-//   react: React,
-// });
-
-// console.log(BusinessCalendly);
 import '../../src/elements/business-calendly/business-calendly';
 
 /**
