@@ -26,10 +26,16 @@
   },
   "types": ["vitest", "node"],
   "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules",
-      "./krafty-tarot/src/types"
-    ],
-  "include": ["./krafty-tarot/**/*.ts", "./krafty-tarot/**/*.tsx", "krafty-tarot/src/**.d.ts"],
+    "./node_modules/@wordpress",
+    "./node_modules/@types",
+    "./node_modules",
+    "./krafty-tarot/src/types"
+  ],
+  "include": [
+    "./krafty-tarot/**/*.ts",
+    "./krafty-tarot/**/*.tsx",
+    "krafty-tarot/src/**.d.ts",
+    "node_modules/@wordpress/**/*.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
